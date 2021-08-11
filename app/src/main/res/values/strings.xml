@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OldLady</string>
+    <string name="start">Start</string>
+    <string name="play_turn">Your turn</string>
+    <string name="wait_turn">Wait your turn</string>
+    <string name="you_have">You have</string>
+    <string name="points">points</string>
+    <string name="waiting">Waiting to start</string>
+    <string name="you_won">You won!</string>
+    <string name="you_lost">You lost :/</string>
+    <string name="reset">Reset</string>
+    <string name="continue_playing">Continue</string>
+</resources>

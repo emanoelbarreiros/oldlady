@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="play_position">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/audiowide</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">75sp</item>
+        <item name="android:textColor">@color/purple_200</item>
+    </style>
+
+    <style name="points">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:fontFamily">@font/audiowide</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="turn_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+</resources>

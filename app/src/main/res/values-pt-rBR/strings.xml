@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jogo da Velha</string>
+    <string name="start">Iniciar</string>
+    <string name="play_turn">Sua vez</string>
+    <string name="wait_turn">Espere sua vez</string>
+    <string name="you_have">Você tem</string>
+    <string name="points">pontos</string>
+    <string name="waiting">Aguardando início</string>
+    <string name="you_won">Você venceu!</string>
+    <string name="you_lost">Você perdeu :/</string>
+    <string name="reset">Reiniciar</string>
+    <string name="continue_playing">Continuar</string>
+</resources>
