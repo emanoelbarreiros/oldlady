@@ -10,4 +10,11 @@
     <string name="you_lost">You lost :/</string>
     <string name="reset">Reset</string>
     <string name="continue_playing">Continue</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="rules">Rules</string>
+    <string name="rules_text">The rules are pretty simples: in alternated turns, players place X\'s and O\'s on empty spaces. The one that firstly creates a straight line with one\'s symbol is the winner. Hit the Continue button to keep the count of points, or Reset to reset the count.</string>
+    <string name="about">About</string>
+    <string name="about_text">This game was created by Emanoel Barreiros to teach object-oriented programming with Android.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="old_lady">Old Lady</string>
 </resources>

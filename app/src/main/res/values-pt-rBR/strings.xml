@@ -11,4 +11,9 @@
     <string name="you_lost">Você perdeu :/</string>
     <string name="reset">Reiniciar</string>
     <string name="continue_playing">Continuar</string>
+    <string name="rules">Regras</string>
+    <string name="rules_text">As regras são simples: os jogadores posicionam X\'s e O\'s alternadamente em lugares vazios. O primeiro a criar um alinha com seu símbolo é o vencedor. Pressione o botão Continuar para manter a contagem de pontos, ou Reiniciar para reiniciar a contagem.</string>
+    <string name="about">Sobre</string>
+    <string name="about_text">Este jogo foi criado por Emanoel Barreiros para ensinar programação orientada a objetos com Android.</string>
+    <string name="old_lady">Jogo da Velha</string>
 </resources>
