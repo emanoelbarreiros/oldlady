@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="gameViewModel"
+            type="com.example.oldlady.game.GameViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos00}"
             app:layout_constraintBottom_toTopOf="@+id/textView14"
             app:layout_constraintEnd_toStartOf="@+id/textView10"
             app:layout_constraintHorizontal_bias="0.5"
@@ -36,7 +43,7 @@
             style="@style/play_position"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos01}"
             app:layout_constraintBottom_toBottomOf="@+id/pos_0_0_text"
             app:layout_constraintEnd_toStartOf="@+id/textView12"
             app:layout_constraintHorizontal_bias="0.5"
@@ -59,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos02}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView12"
@@ -81,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos10}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/textView16"
             app:layout_constraintHorizontal_bias="0.5"
@@ -104,7 +111,7 @@
             style="@style/play_position"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos11}"
             app:layout_constraintEnd_toStartOf="@+id/textView18"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView16"
@@ -127,7 +134,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos12}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/textView18"
@@ -148,7 +155,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos20}"
             app:layout_constraintEnd_toStartOf="@+id/textView22"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -170,7 +177,7 @@
             style="@style/play_position"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos21}"
             app:layout_constraintBottom_toBottomOf="@+id/pos_2_0_text"
             app:layout_constraintEnd_toStartOf="@+id/textView24"
             app:layout_constraintHorizontal_bias="0.5"
@@ -195,7 +202,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="X"
+            android:text="@{gameViewModel.boardPos22}"
             app:layout_constraintBottom_toBottomOf="@+id/pos_2_1_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -205,7 +212,7 @@
         <TextView
             android:id="@+id/bottom_player_info_text"
             style="@style/turn_style"
-            android:text="@string/waiting"
+            android:text="@{gameViewModel.bottomPlayerInfoText}"
             app:layout_constraintEnd_toStartOf="@+id/textView28"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pos_2_0_text" />
@@ -219,7 +226,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="32dp"
             android:rotation="180"
-            android:text="@string/waiting"
+            android:text="@{gameViewModel.topPlayerInfoText}"
             app:layout_constraintBottom_toTopOf="@+id/pos_0_0_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView31" />
@@ -239,7 +246,7 @@
         <TextView
             android:id="@+id/bottom_player_points_text"
             style="@style/points"
-            android:text="0"
+            android:text="@{Integer.toString(gameViewModel.bottomPlayerPoints)}"
             app:layout_constraintEnd_toEndOf="@+id/textView28"
             app:layout_constraintStart_toStartOf="@+id/textView28"
             app:layout_constraintTop_toBottomOf="@+id/textView28" />
@@ -272,7 +279,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:rotation="180"
-            android:text="0"
+            android:text="@{Integer.toString(gameViewModel.topPlayerPoints)}"
             app:layout_constraintBottom_toTopOf="@+id/textView31"
             app:layout_constraintEnd_toEndOf="@+id/textView31"
             app:layout_constraintStart_toStartOf="@+id/textView31" />
@@ -304,7 +311,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_weight="1"
                 android:text="@string/continue_playing"
-                android:visibility="gone" />
+                android:visibility="@{gameViewModel.gameRunning ? View.GONE : View.VISIBLE}" />
 
             <Button
                 android:id="@+id/reset_button"
@@ -312,7 +319,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/reset"
-                android:visibility="gone" />
+                android:visibility="visible" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

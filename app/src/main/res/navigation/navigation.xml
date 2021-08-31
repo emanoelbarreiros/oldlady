@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.oldlady.AboutFragment"
+        android:name="com.example.oldlady.misc.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/rulesFragment"
-        android:name="com.example.oldlady.RulesFragment"
+        android:name="com.example.oldlady.misc.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.oldlady.GameFragment"
+        android:name="com.example.oldlady.game.GameFragment"
         android:label="GameFragment" >
         <action
             android:id="@+id/action_gameFragment_to_aboutFragment"
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.example.oldlady.TitleFragment"
+        android:name="com.example.oldlady.title.TitleFragment"
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action

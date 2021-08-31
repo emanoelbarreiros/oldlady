@@ -1,10 +1,10 @@
-package com.example.oldlady
+package com.example.oldlady.game
 
 class GameBoard {
     private val board = mutableListOf<MutableList<Play>>(
-        mutableListOf(Play.NONE,Play.NONE,Play.NONE),
-        mutableListOf(Play.NONE,Play.NONE,Play.NONE),
-        mutableListOf(Play.NONE,Play.NONE,Play.NONE)
+        mutableListOf(Play.NONE, Play.NONE, Play.NONE),
+        mutableListOf(Play.NONE, Play.NONE, Play.NONE),
+        mutableListOf(Play.NONE, Play.NONE, Play.NONE)
     )
 
     fun play(line: Int, column: Int, play: Play): Boolean {

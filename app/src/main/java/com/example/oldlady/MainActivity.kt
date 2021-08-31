@@ -1,10 +1,7 @@
 package com.example.oldlady
 
-import android.app.ActivityManager
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
