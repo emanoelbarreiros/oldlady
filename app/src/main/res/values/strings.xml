@@ -10,11 +10,30 @@
     <string name="you_lost">You lost :/</string>
     <string name="reset">Reset</string>
     <string name="continue_playing">Continue</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="rules">Rules</string>
     <string name="rules_text">The rules are pretty simples: in alternated turns, players place X\'s and O\'s on empty spaces. The one that firstly creates a straight line with one\'s symbol is the winner. Hit the Continue button to keep the count of points, or Reset to reset the count.</string>
     <string name="about">About</string>
     <string name="about_text">This game was created by Emanoel Barreiros to teach object-oriented programming with Android.</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="old_lady">Old Lady</string>
+    <string name="player1_bottom">Player 1 (bottom)</string>
+    <string name="player2_top">Player 2 (top)</string>
+    <string name="name">Name</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+
+    <!-- score view -->
+    <string name="player_1_formatted"><![CDATA[<b>Player 1:</b>]]></string>
+    <string name="player_2_formatted"><![CDATA[<b>Player 2:</b>]]></string>
+    <string name="player_1_score_formatted"><![CDATA[<b>Player 1 score:</b>]]></string>
+    <string name="player_2_score_formatted"><![CDATA[<b>Player 2 score:</b>]]></string>
+    <string name="played_on_formatted"><![CDATA[<b>Played on:</b>]]></string>
+    <string name="game_length_formatted"><![CDATA[<b>Elapsed time:</b>]]></string>
+    <string name="score">Score</string>
+    <string name="not_finished">Not finished</string>
+    <string name="clear">Clear records</string>
+    <string name="cleared_message">The score record was cleared.</string>
+    <string name="no_records">No records to show</string>
+    <string name="played_on">Played on</string>
+    <string name="for_text">for</string>
+
 </resources>

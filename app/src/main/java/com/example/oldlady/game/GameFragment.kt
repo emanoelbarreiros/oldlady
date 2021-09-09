@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.oldlady.R
 import com.example.oldlady.databinding.FragmentGameBinding
+import com.example.oldlady.score.ScoreDatabase
 
 class GameFragment : Fragment() {
 
@@ -24,9 +25,26 @@ class GameFragment : Fragment() {
             inflater, R.layout.fragment_game,container, false
         )
 
-        viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
+        val application = requireNotNull(this.activity).application
+        val dataSource = ScoreDatabase.getInstance(application).scoreDatabaseDao
+        val viewModelFactory = GameViewModelFactory(dataSource, application)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(GameViewModel::class.java)
+
         binding.gameViewModel = viewModel
         binding.lifecycleOwner = this
+
+        val arguments = GameFragmentArgs.fromBundle(requireArguments())
+        if (arguments.player1Name.isBlank()) {
+            viewModel.player1Name.value = getString(R.string.player_1)
+        } else {
+            viewModel.player1Name.value = arguments.player1Name
+        }
+
+        if (arguments.player2Name.isBlank()) {
+            viewModel.player2Name.value = getString(R.string.player_2)
+        } else {
+            viewModel.player2Name.value = arguments.player2Name
+        }
 
         viewModel.startGame()
 

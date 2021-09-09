@@ -16,4 +16,22 @@
     <string name="about">Sobre</string>
     <string name="about_text">Este jogo foi criado por Emanoel Barreiros para ensinar programação orientada a objetos com Android.</string>
     <string name="old_lady">Jogo da Velha</string>
+    <string name="player1_bottom">Jogador 1 (inferior)</string>
+    <string name="player2_top">Jogador 2 (superior)</string>
+    <string name="name">Nome</string>
+    <string name="player_1">Jogador 1</string>
+    <string name="player_2">Jogador 2</string>
+    <string name="player_1_formatted"><![CDATA[<b>Jogador 1:</b>]]></string>
+    <string name="player_2_formatted"><![CDATA[<b>Jogador 2:</b>]]></string>
+    <string name="player_1_score_formatted"><![CDATA[<b>Pontucão do jogador 1:</b>]]></string>
+    <string name="player_2_score_formatted"><![CDATA[<b>Pontucão do jogador 2:</b>]]></string>
+    <string name="played_on_formatted"><![CDATA[<b>Jogado em:</b>]]></string>
+    <string name="game_length_formatted"><![CDATA[<b>Duracão da partida:</b>]]></string>
+    <string name="score">Placar</string>
+    <string name="not_finished">Não finalizado</string>
+    <string name="clear">Limpar registros</string>
+    <string name="cleared_message">O placar foi limpo.</string>
+    <string name="no_records">Nenhum registro para exibir</string>
+    <string name="played_on">Jogado em</string>
+    <string name="for_text">por</string>
 </resources>

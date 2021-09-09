@@ -1,12 +1,18 @@
 package com.example.oldlady.game
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
 import com.example.oldlady.R
+import com.example.oldlady.score.Score
+import com.example.oldlady.score.ScoreDatabaseDao
+import kotlinx.coroutines.*
 
-class GameViewModel: ViewModel() {
+class GameViewModel(val database: ScoreDatabaseDao, application: Application) : AndroidViewModel(application)  {
+
+    private var _currentScore: Score? = null
+
+    var player1Name =  MutableLiveData<String>()
+    var player2Name = MutableLiveData<String>()
 
     private var _bottomPlayerPoints = MutableLiveData<Int>(0)
     val bottomPlayerPoints: LiveData<Int>
@@ -43,6 +49,15 @@ class GameViewModel: ViewModel() {
         get() = _topPlayerInfoText
 
     val gameRunning: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
+
+    private var viewModelJob = Job()
+
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 
     fun incrementTopPlayerPoints() {
         _topPlayerPoints.value = _topPlayerPoints.value?.inc()
@@ -96,9 +111,12 @@ class GameViewModel: ViewModel() {
                 if (check.all { it == play }) {
                     if (play == Play.X) {
                         incrementBottomPlayerPoints()
+                        _currentScore?.player1Score?.plus(1)
                     } else {
                         incrementTopPlayerPoints()
+                        _currentScore?.player2Score?.plus(1)
                     }
+                    updateScore()
                     return play
                 }
             }
@@ -144,11 +162,40 @@ class GameViewModel: ViewModel() {
         resetPoints()
         _gameBoard.value = GameBoard()
         gameRunning.value = true
+        recordNewScore()
     }
 
     fun startGame() {
         gameRunning.value = true
         _state.value = GameState.X_TURN
+        recordNewScore()
         updateBindings()
+    }
+
+    private fun updateScore() {
+        uiScope.launch {
+            val startTime = _currentScore!!.playedOn
+            _currentScore!!.elapsedTime = System.currentTimeMillis() - startTime
+            _currentScore!!.player1Score = bottomPlayerPoints.value!!
+            _currentScore!!.player2Score = topPlayerPoints.value!!
+            updateCurrentScore()
+        }
+    }
+
+    private suspend fun updateCurrentScore() {
+        withContext(Dispatchers.IO) {
+            database.update(_currentScore!!)
+        }
+    }
+
+    private fun recordNewScore() {
+        uiScope.launch {
+            withContext(Dispatchers.IO) {
+                val score = Score(player1Name = player1Name.value!!, player2Name = player2Name.value!!)
+                database.insert(score)
+                _currentScore = database.getLastScore()
+            }
+        }
+
     }
 }

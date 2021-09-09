@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/scoreFragment"
+        android:title="@string/score" />
+    <item
         android:id="@+id/rulesFragment"
         android:title="@string/rules" />
 </menu>

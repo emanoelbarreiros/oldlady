@@ -43,4 +43,19 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">18sp</item>
     </style>
+
+    <style name="score">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/audiowide</item>
+        <item name="android:textColor">@color/purple_200</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="player_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
